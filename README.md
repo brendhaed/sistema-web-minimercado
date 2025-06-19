@@ -6,7 +6,7 @@ Segunda parte do projeto da disciplina de Fundamentos de Sistemas Web, focado na
 
 * **Páginas Essenciais:** Implementação de diversas páginas para simular um fluxo completo de um e-commerce básico (visualização de produtos, carrinho, informações sobre a empresa, etc.).
 * **Listagem de Produtos:** Exibição de produtos organizados por categorias, facilitando a navegação do usuário.
-* **Simulação de Carrinho de Compras:** Uma representação visual do carrinho de compras para demonstrar a estrutura de seleção de itens (sem lógica de backend).
+* **Simulação de Carrinho de Compras:** Uma representação visual do carrinho de compras para demonstrar a estrutura de seleção de itens (sem lógica javascript).
 * **Pesquisa de Produtos:** Funcionalidade de pesquisa para encontrar produtos rapidamente.
 * **Agendamento de Serviços:** Formulário para agendar serviços como delivery ou retirada na loja.
 
@@ -27,6 +27,7 @@ A aplicação é composta pelas seguintes páginas HTML, cada uma com sua funç�
 * `servicos.html`: Apresenta os serviços oferecidos pelo minimercado (ex: delivery, retirada na loja), com botões para direcionar ao agendamento.
 * `categorias.html`: Exibe as diferentes categorias de produtos disponíveis (Frutas e legumes, Produtos Alimentícios não perecíveis, Produtos de Higiene e Limpeza).
 * `produtos.html`: Lista todos os produtos do minimercado, organizados em seções por categoria.
+* `perfil.html`: Simula as informações da conta de um usúario, contendo: nome, sobrenome, data de nascimento, nome usuário, email, telefone 1, telefone 2, endereço, cidade, estado e CEP.
 * `carrinho.html`: Simula a visualização de um carrinho de compras, demonstrando a estrutura visual dos itens selecionados (sem lógica javascript).
 * `sobre.html`: Contém informações sobre o minimercado fictício.
 * `cadastro.html`: Formulário para o cadastro de novos usuários no sistema.
