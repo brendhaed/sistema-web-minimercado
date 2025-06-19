@@ -42,4 +42,4 @@ Arquivos JavaScript que são responsáveis pela implementação da lógica da ap
 ##  Deploy do Projeto:
 https://brendhaed.github.io/sistema-web-minimercado/ 
 
-Desenvolvido com por brendhaed💻❤️
+Desenvolvido por brendhaed💻❤️
