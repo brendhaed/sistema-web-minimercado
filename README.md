@@ -12,7 +12,7 @@ Segunda parte do projeto da disciplina de Fundamentos de Sistemas Web, focado na
 
 ## 🚀 Tecnologias Utilizadas
 
-As seguintes tecnologias foram empregadas no desenvolvimento deste projeto:
+Tecnologias que foram utilizadas no desenvolvimento deste projeto:
 
 * **HTML5** 
 * **CSS3** 
