@@ -1,5 +1,5 @@
 function Pesquisa(event) {
-    event.preventDefault(); // Evita o reload da página ao enviar o formulário
+    event.preventDefault(); 
 
     let pesquisa = document.getElementById("pesquisa").value.toLowerCase();
     let section = document.getElementById("resultado");
@@ -20,20 +20,24 @@ function Pesquisa(event) {
             categoria.includes(pesquisa) ||
             preco.includes(pesquisa)
         ) {
-            resultado += `
-                 <div class="row row-cols-1 row-cols-md-2 g-4"> 
-                 <div class="card h-100 shadow-sm"> 
-                 <img src="${produto.img}" class="card-img-top" alt="${produto.nomeProduto}"> 
-                 <div class="card-body d-flex flex-column"> 
-                 <h5 class="card-title">${produto.nomeProduto}</h5> 
-                 <p class="card-text fs-5 fw-bold">R$ ${produto.preco}</p> 
-                 <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a> </div>
-                 <button type="button" class="btn btn-light">
-                 <i class="bi bi-star"></i> Favoritar
-                 </button>
+           resultado += `
+           <div class="row justify-content-center gx-0 my-3">
+           <div class="col-10 col-md-6 col-lg-4">
+           <div class="card h-100 shadow-sm text-center">
+           <img src="${produto.img}" class="card-img-top" alt="${produto.nomeProduto}">
+           <div class="card-body d-flex flex-column">
+          <h5 class="card-title">${produto.nomeProduto}</h5>
+          <p class="card-text fs-5 fw-bold">R$ ${produto.preco}</p>
+          <a href="#" class="btn btn-primary mt-auto">Adicionar ao carrinho</a>
+          <button type="button" class="btn btn-light mt-2">
+            <i class="bi bi-star"></i> Favoritar
+          </button>
         </div>
+      </div>
     </div>
-            `;
+  </div>
+`;
+
         }
     }
 
