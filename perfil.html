@@ -3,68 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-    <title>Meu perfil</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/perfil.css">
+    <title>Meu Perfil</title>
 </head>
+
 <body>
-      <header>
-        <div class="logo">
-            <img src="assets/img/logo/logo.png" alt="" width="100px">
-        </div>
-        <div class="search">
-            <form id="form-pesquisa">
-                <div class="search-wrapper">
-                  <input type="search" id="pesquisa" name="q" class="form-control" placeholder="Digite aqui o que você procura" aria-label="Pesquisar">
-                  <button type="submit">
-                  </button>
-                </div>
-              </form>
-        </div>
+<header class=" shadow-sm py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+ 
+    <!-- Botão Hamburguer -->
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
 
-         <div class="carrinho">
-        <a href="carrinho.html">
-            <i class="bi bi-cart-fill"></i>
-        </a>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/img/logo/logo.png" alt="logo mercado boa compra">
     </div>
-    
-        <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="serviços.html">Serviços</a></li>
-            <li><a href="categorias.html">Categorias</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
-        </ul>
-    </nav>
-    </header>
-    
-    <a href="index.html">← Voltar</a>
 
-    <section class="perfil">
-    <img src="assets/img/logo/user.png" alt="Foto de perfil do usuário">
-    <h1>User</h1>
-    <p><strong>Usuário:</strong> maria_02</p>
-    <p><strong>E-mail:</strong> maria@email.com</p>
-    <p><strong>Data de cadastro:</strong> 01/01/2025</p>
-  </section>
-
-  <section class="endereco">
-    <h2>Endereço</h2>
-    <ul>
-      <li><strong>Cidade:</strong> Belo Horizonte</li>
-      <li><strong>Estado:</strong> MG</li>
-      <li><strong>CEP:</strong> 30123-456</li>
-      <li><strong>Rua:</strong> Av. das Palmeiras</li>
-      <li><strong>Número:</strong> 123</li>
-      <li><strong>Bairro:</strong> Centro</li>
-      <li><strong>Complemento:</strong> Apto 202</li>
+   <!-- Menu de Navegação -->
+<div class="collapse navbar-collapse d-md-block" id="mainNavbarCollapse">
+  <nav class="d-flex justify-content-center">
+    <ul class="nav flex-column flex-md-row">
+      <li class="nav-item">
+        <a class="nav-link text-light" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="serviços.html">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="categorias.html">Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="produtos.html">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="perfil.html">Perfil</a>
+      </li>
     </ul>
-  </section>
+  </nav>
+</div>
 
-  <section class="cadastro">
-    <p>Ainda não tem cadastro?</p>
-    <a href="cadastro.html">Cadastre-se aqui</a>
-  </section>
+
+    <!-- Carrinho -->
+    <div id="carrinho">
+      <a href="carrinho.html" class="text-dark fs-4">
+        <i class="bi bi-cart"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Barra de Busca -->
+  <div class="container mt-3">
+    <form class="d-flex" role="search" style="max-width: 600px; margin: 0 auto;">
+      <input class="form-control me-2" type="search" placeholder="Busque aqui produtos..." aria-label="Search" id="pesquisa">
+      <button class="btn btn-dark" type="submit" onclick="Pesquisa(event)">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+</header>
+
+<!-- Resultado de pesquisa -->
+<section id="resultado" style="margin-top: 20px;"></section>
+
+<!-- Perfil de usuario logado -->
+  <section class="vh-100">
+  <div class="container py-5 h-200">
+    <div class="row d-flex justify-content-center align-items-center h-100" >
+      <div class="col col-lg-10 mb-4 mb-lg-0">
+        <div class="card mb-3" style="border-radius: .5rem;">
+          <div class="row g-0">
+            <div class="col-md-4 gradient-custom text-center text-black"
+              style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+              <img src="./assets/img/logo/user.png"
+                alt="Foto de perfil" class="img-fluid my-5" style="width: 100px;" />
+              <h5>Maria Ferreira</h5>
+              <p>Data de cadastro: 01/01/2025</p>
+              <i class="far fa-edit mb-5"></i>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body p-4">
+                <h6>Informações Pessoais</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+
+                  <div class="col-6 mb-3">
+                  <h6>Nome</h6>
+                  <p class="text-muted">Maria</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                  <h6>Sobrenome</h6>
+                  <p class="text-muted">Ferreira</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                  <h6>User</h6>
+                  <p class="text-muted">maria_02</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Email</h6>
+                    <p class="text-muted">maria@email.com</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Telefone</h6>
+                    <p class="text-muted">(55) 99999 9999</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Data de nascimento</h6>
+                    <p class="text-muted">01/01/2000</p>
+                  </div>
+                </div>
+                <h6>Endereço</h6>
+                <hr class="mt-0 mb-4">
+                <div class="row pt-1">
+                  <div class="col-6 mb-3">
+                    <h6>Rua</h6>
+                    <p class="text-muted">Av. das Palmeiras</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Complemento</h6>
+                    <p class="text-muted">Bloco 2</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Bairro</h6>
+                    <p class="text-muted">Centro</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Número</h6>
+                    <p class="text-muted">1005</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Cidade</h6>
+                    <p class="text-muted">Porto Alegre</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>Estado</h6>
+                    <p class="text-muted">RS</p>
+                  </div>
+                  <div class="col-6 mb-3">
+                    <h6>CEP</h6>
+                    <p class="text-muted"> 30123-456</p>
+                  </div>
+                </div>
+                   <div class="cadastro text-center">
+                    <p>Ainda não tem cadastro?</p>
+                    <a href="cadastro.html">Cadastre-se aqui</a>
+                  </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="./assets/js/resultado-pesquisa.js"></script>
+<script src="./assets/js/produtos.js"></script>
+
 </body>
 </html>

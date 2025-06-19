@@ -1,0 +1,15 @@
+.about{
+    background-color: #f8f8f8;
+    padding-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 150px;
+}
+.about h1{
+    font-size: 18px;
+    text-align: center;
+    padding-bottom: 50px;
+}
+.about p{
+    font-size: 16px;
+}

@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+  input[type="number"] {
+    max-width: 60px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+  }
+
+  .produto-row {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .produto-row > div {
+    margin-bottom: 10px;
+  }
+
+  .produto-row img {
+    margin: 0 auto;
+  }
+
+  .produto-quantidade {
+    justify-content: center !important;
+  }
+
+  .produto-quantidade input[type="number"] {
+    max-width: 60px;
+    text-align: center;
+  }
+}

@@ -1,0 +1,14 @@
+.formulario{
+    padding-top: 100px;
+    padding-bottom: 100px;
+}
+.formulario h1{
+    padding-bottom: 50px;
+}
+
+@media (max-width: 768px) {
+    .formulario{
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+}

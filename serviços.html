@@ -3,64 +3,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/servicos.css">
     <title>Serviços</title>
 </head>
 <body>
+<header class=" shadow-sm py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+ 
+    <!-- Botão Hamburguer -->
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
 
-    <header>
-        <div class="logo">
-            <img src="assets/img/logo/logo.png" alt="" width="100px">
-        </div>
-        <div class="search">
-            <form id="form-pesquisa">
-                <div class="search-wrapper">
-                  <input type="search" id="pesquisa" name="q" class="form-control" placeholder="Digite aqui o que você procura" aria-label="Pesquisar">
-                  <button type="submit">
-                  </button>
-                </div>
-              </form>
-        </div>
-
-         <div class="carrinho">
-        <a href="carrinho.html">
-            <i class="bi bi-cart-fill"></i>
-        </a>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/img/logo/logo.png" alt="logo mercado boa compra">
     </div>
-    
-        <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="serviços.html">Serviços</a></li>
-            <li><a href="categorias.html">Categorias</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
-        </ul>
-    </nav>
-    </header>
 
-     <a href="index.html">← Voltar</a>
+   <!-- Menu de Navegação -->
+<div class="collapse navbar-collapse d-md-block" id="mainNavbarCollapse">
+  <nav class="d-flex justify-content-center">
+    <ul class="nav flex-column flex-md-row">
+      <li class="nav-item">
+        <a class="nav-link text-light" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="serviços.html">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="categorias.html">Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="produtos.html">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="perfil.html">Perfil</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-     
-    <section class="servicos">
-    <h1>Serviços oferecidos</h1>
 
-    <div class="cards-servicos">
-        <div class="card">
-            <img src="./assets/img/logo/delivery.png" alt="Imagem ilustrativa de delivery">
-            <h2>Delivery</h2>
-            <p>Receba seus produtos no conforto da sua casa com agilidade e segurança.</p>
-        </div>
-
-        <div class="card">
-            <img src="./assets/img/logo/retirada-na-loja.jpg" alt="Imagem ilustrativa de retirada na loja">
-            <h2>Retirada na loja</h2>
-            <p>Compre pelo site e retire seu pedido no nosso ponto físico, sem espera.</p>
-        </div>
-
+    <!-- Carrinho -->
+    <div id="carrinho">
+      <a href="carrinho.html" class="text-dark fs-4">
+        <i class="bi bi-cart"></i>
+      </a>
     </div>
+  </div>
+
+  <!-- Barra de Busca -->
+  <div class="container mt-3">
+    <form class="d-flex" role="search" style="max-width: 600px; margin: 0 auto;">
+      <input class="form-control me-2" type="search" placeholder="Busque aqui produtos..." aria-label="Search" id="pesquisa">
+      <button class="btn btn-dark" type="submit" onclick="Pesquisa(event)">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+</header>
+
+<!-- Resultado de pesquisa -->
+<section id="resultado" style="margin-top: 20px;"></section>
+
+<!-- Section de serviços -->
+<section class="servicos">
+  <h1 class="text-center text-dark fw-bold my-4">Serviços</h1>
+  <div class="container">
+    <div class="row row-cols-1 row-cols-md-2 g-4">
+      <div class="col">
+        <div class="card h-100">
+          <img src="assets/img/logo/delivery.jpg" class="card-img-top" alt="foto ilustrativa delivery">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Delivery</h5>
+            <p class="card-text flex-grow-1">Receba suas compras com conforto e praticidade no endereço que você escolher.</p>
+            <a href="agendar-serviço.html" class="btn btn-primary mt-auto">Agendar serviço</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="assets/img/logo/loja.jpg" class="card-img-top" alt="Foto ilustrativa retirar na loja">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Retirada na Loja</h5>
+            <p class="card-text flex-grow-1"> Faça seu pedido online e retire diretamente em nossa loja, sem filas e com total agilidade.</p>
+            <a href="agendar-serviço.html" class="btn btn-primary mt-auto">Agendar serviço</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<script src="./assets/js/resultado-pesquisa.js"></script>
+<script src="./assets/js/produtos.js"></script>
     
 </body>
 </html>

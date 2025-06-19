@@ -3,111 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/cadastro.css">
     <title>Cadastro</title>
 </head>
+
 <body>
+<header class=" shadow-sm py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+ 
+    <!-- Botão Hamburguer -->
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
 
-        <header>
-        <div class="logo">
-            <img src="assets/img/logo/logo.png" alt="" width="100px">
-        </div>
-        <div class="search">
-            <form id="form-pesquisa">
-                <div class="search-wrapper">
-                  <input type="search" id="pesquisa" name="q" class="form-control" placeholder="Digite aqui o que você procura" aria-label="Pesquisar">
-                  <button type="submit">
-                  </button>
-                </div>
-              </form>
-        </div>
-
-         <div class="carrinho">
-        <a href="carrinho.html">
-            <i class="bi bi-cart-fill"></i>
-        </a>
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/img/logo/logo.png" alt="logo mercado boa compra">
     </div>
-    
-        <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="serviços.html">Serviços</a></li>
-            <li><a href="categorias.html">Categorias</a></li>
-            <li><a href="perfil.html">Perfil</a></li>
-        </ul>
-    </nav>
-    </header>
-    
-    <a href="index.html">← Voltar</a>
 
-    <div class="formulario">
-        <h1>Cadastre-se</h1>
-        <fieldset>
-            <legend>Informações pessoais</legend>
-            <form action="post">
-            <label for="nome">Nome</label>
-            <input type="text" id="nome" name="nome" required><br><br>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="cpf">CPF</label>
-            <input type="text" id="cpf" name="cpf" maxlength="14" placeholder="000.000.000-00" required>
-        </form>
-        </fieldset>
+   <!-- Menu de Navegação -->
+<div class="collapse navbar-collapse d-md-block" id="mainNavbarCollapse">
+  <nav class="d-flex justify-content-center">
+    <ul class="nav flex-column flex-md-row">
+      <li class="nav-item">
+        <a class="nav-link text-light" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="serviços.html">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="categorias.html">Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="produtos.html">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="perfil.html">Perfil</a>
+      </li>
+    </ul>
+  </nav>
+</div>
 
-        <fieldset>
-            <legend>Endereço</legend>
-            <form action="post">
-            <label for="cidade">Cidade</label>
-            <input type="text" id="cidade" name="cidade" required><br><br>
 
-            <label for="estado">Estado</label>
-            <select id="estado" name="estado" required>
-                <option value="">Selecione</option>
-                <option value="AC">Acre</option>
-                <option value="AL">Alagoas</option>
-                <option value="AP">Amapá</option>
-                <option value="AM">Amazonas</option>
-                <option value="BA">Bahia</option>
-                <option value="CE">Ceará</option>
-                <option value="DF">Distrito Federal</option>
-                <option value="ES">Espírito Santo</option>
-                <option value="GO">Goiás</option>
-                <option value="MA">Maranhão</option>
-                <option value="MT">Mato Grosso</option>
-                <option value="MS">Mato Grosso do Sul</option>
-                <option value="MG">Minas Gerais</option>
-                <option value="PA">Pará</option>
-                <option value="PB">Paraíba</option>
-                <option value="PR">Paraná</option>
-                <option value="PE">Pernambuco</option>
-                <option value="PI">Piauí</option>
-                <option value="RJ">Rio de Janeiro</option>
-                <option value="RN">Rio Grande do Norte</option>
-                <option value="RS">Rio Grande do Sul</option>
-                <option value="RO">Rondônia</option>
-                <option value="RR">Roraima</option>
-                <option value="SC">Santa Catarina</option>
-                <option value="SP">São Paulo</option>
-                <option value="SE">Sergipe</option>
-                <option value="TO">Tocantins</option>
-                </select><br><br>
-
-                <label for="cep">CEP:</label>
-                <input type="text" id="cep" name="cep" maxlength="8" required>
-
-        </form>
-        </fieldset>
-
-        <fieldset>
-            <legend>Conta</legend>
-            <label for="name">Nome usuário</label>
-            <input type="text">
-            <label for="email">Senha</label>
-            <input type="password" id="password" name="password">
-        </fieldset>
-        <input type="button" value="Enviar">
+    <!-- Carrinho -->
+    <div id="carrinho">
+      <a href="carrinho.html" class="text-dark fs-4">
+        <i class="bi bi-cart"></i>
+      </a>
     </div>
+  </div>
+
+  <!-- Barra de Busca -->
+  <div class="container mt-3">
+    <form class="d-flex" role="search" style="max-width: 600px; margin: 0 auto;">
+      <input class="form-control me-2" type="search" placeholder="Busque aqui produtos..." aria-label="Search" id="pesquisa">
+      <button class="btn btn-dark" type="submit" onclick="Pesquisa(event)">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+</header>
+
+<!-- formulario de cadastro -->
+
+<div class="formulario">
+   <h1 class="text-center">Cadastre-se</h1>
+<div class="d-flex justify-content-center">
+
+  <form action="https://formsubmit.com/" class="row g-3" style="max-width: 800px; width: 100%;">
+    <div class="col-md-6">
+      <label for="inputName" class="form-label">Nome:</label>
+      <input type="text" class="form-control" id="inputName" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputSurname" class="form-label">Sobrenome</label>
+      <input type="text" class="form-control" id="inputSurname" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputEmail" class="form-label">E-mail</label>
+      <input type="email" class="form-control" id="inputEmail" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputDateOfBirth" class="form-label">Data de nascimento</label>
+      <input type="date" class="form-control" id="inputDateOfBirth" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputNumber1" class="form-label">Telefone</label>
+      <input type="text" class="form-control" id="inputNumber1" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputNumber1" class="form-label">Telefone 2</label>
+      <input type="text" class="form-control" id="inputNumber2">
+    </div>
+
+    <div class="col-6">
+      <label for="inputAddress" class="form-label">Endereço</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="Rua, bairro, nº" required>
+    </div>
+    <div class="col-6">
+      <label for="inputAddress2" class="form-label">Complemento</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartamento, Bloco, Andar, Referência">
+    </div>
+
+    <div class="col-md-4">
+      <label for="inputCity" class="form-label">Cidade</label>
+      <input type="text" class="form-control" id="inputCity" required>
+    </div>
+    <div class="col-md-4">
+      <label for="inputState" class="form-label">Estado</label>
+      <select id="inputState" class="form-select form-select-sm" required>
+        <option value="">Selecione</option>
+        <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="DF">Distrito Federal</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+      </select>
+    </div>
+    <div class="col-md-4">
+      <label for="inputZip" class="form-label">CEP</label>
+      <input type="text" class="form-control" id="inputZip" required>
+    </div>
+
+    <div class="col-md-6">
+      <label for="inputUsername" class="form-label">User</label>
+      <input type="text" class="form-control" id="inputUsername" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword" class="form-label">Senha</label>
+      <input type="password" class="form-control" id="inputPassword" required>
+    </div>
+    <div class="col-md-6">
+      <label for="inputPassword" class="form-label">Confirme a senha</label>
+      <input type="password" class="form-control" id="inputPassword" required>
+    </div>
+
+    <div class="col-12">
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck" required>
+        <label class="form-check-label" for="gridCheck">
+          Aceito com os termos
+        </label>
+      </div>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </div>
+  </form>
+</div>
+</div>
+
 </body>
 </html>

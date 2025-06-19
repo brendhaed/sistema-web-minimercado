@@ -3,13 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> 
-    
-    <title>Carrinho</title>
+    <!-- Bootstrap 5.3.3 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link rel="stylesheet" href="assets/css/carrinho.css">
+    <title>Carrinho de compras</title>
 </head>
+
 <body>
+<header class=" shadow-sm py-3">
+  <div class="container d-flex justify-content-between align-items-center">
+ 
+    <!-- Botão Hamburguer -->
+    <button class="navbar-toggler d-md-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbarCollapse" aria-controls="mainNavbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <i class="bi bi-list"></i>
+    </button>
+
+    <!-- Logo -->
+    <div class="logo">
+      <img src="assets/img/logo/logo.png" alt="logo mercado boa compra">
+    </div>
+
+   <!-- Menu de Navegação -->
+<div class="collapse navbar-collapse d-md-block" id="mainNavbarCollapse">
+  <nav class="d-flex justify-content-center">
+    <ul class="nav flex-column flex-md-row">
+      <li class="nav-item">
+        <a class="nav-link text-light" href="index.html">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="serviços.html">Serviços</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="categorias.html">Categorias</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="produtos.html">Produtos</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-light" href="perfil.html">Perfil</a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+
+    <!-- Carrinho -->
+    <div id="carrinho">
+      <a href="carrinho.html" class="text-dark fs-4">
+        <i class="bi bi-cart"></i>
+      </a>
+    </div>
+  </div>
+
+  <!-- Barra de Busca -->
+  <div class="container mt-3">
+    <form class="d-flex" role="search" style="max-width: 600px; margin: 0 auto;">
+      <input class="form-control me-2" type="search" placeholder="Busque aqui produtos..." aria-label="Search" id="pesquisa">
+      <button class="btn btn-dark" type="submit" onclick="Pesquisa(event)">
+        <i class="bi bi-search"></i>
+      </button>
+    </form>
+  </div>
+</header>
+    
+<section class="h-100">
+  <div class="container h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-10">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="fw-normal mb-0">Carrinho</h3>
+          <div>
+          </div>
+        </div>
+
+        <div class="card rounded-3 mb-4">
+          <div class="card-body p-4">
+            <div class="row d-flex justify-content-between align-items-center produto-row">
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <img src="./assets/img/produtos/maça.jpg" class="img-fluid rounded-3" style="width: 80px; height: auto;" alt="Cotton T-shirt">
+
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-3">
+                <p class="lead fw-normal mb-2">Maçã</p>
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-2 d-flex produto-quantidade">
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                  <i class="fas fa-minus"></i>
+                </button>
+
+                <input id="form1" min="0" name="quantity" value="2" type="number"
+                  class="form-control form-control-sm" />
+
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <h5 class="mb-0">R$4,99</h5>
+              </div>
+              <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card rounded-3 mb-4">
+          <div class="card-body p-4">
+            <div class="row d-flex justify-content-between align-items-center produto-row">
+              <div class="col-md-2 col-lg-2 col-xl-2">
+                <img src="./assets/img/produtos/café.jpg" class="img-fluid rounded-3" style="width: 80px; height: auto;" alt="Cotton T-shirt">
+
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-3">
+                <p class="lead fw-normal mb-2">Café Gourmet</p>
+              </div>
+              <div class="col-md-3 col-lg-3 col-xl-2 d-flex produto-quantidade">
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                  onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+                  <i class="fas fa-minus"></i>
+                </button>
+
+                <input id="form1" min="0" name="quantity" value="2" type="number"
+                  class="form-control form-control-sm" />
+
+                <button data-mdb-button-init data-mdb-ripple-init class="btn btn-link px-2"
+                  onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+                  <i class="fas fa-plus"></i>
+                </button>
+              </div>
+              <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1 ">
+                <h5 class="mb-0">R$29,99</h5>
+              </div>
+              <div class="col-md-1 col-lg-1 col-xl-1 text-end">
+                <a href="#!" class="text-danger"><i class="fas fa-trash fa-lg"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+         <h5 class="mb-0">Total: R$34,98</h5>
+          <div class="card-body text-center mt-4">
+            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-danger">Fazer pedido</button>
+          </div>
+       
+
+      </div>
+    </div>
+  </div>
+</section>
+
     
 </body>
 </html>
