@@ -27,7 +27,7 @@ let produtos = [{
     categoria: "Frutas e Verduras",
     nomeProduto: "Kiwi",
     preco: "09,99",
-    img: 'assets/img/produtos/kiwi.jpg'
+    img: 'assets/img/produtos/kiwi.jpeg'
 },
 {
     categoria: "Frutas e Verduras",
