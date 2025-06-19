@@ -20,7 +20,7 @@ let produtos = [{
 {
     categoria: "Frutas e Verduras",
     nomeProduto: "Couve",
-    preco: "R$08,49",
+    preco: "08,49",
     img: 'assets/img/produtos/couve.jpg'
 },
 {
@@ -52,7 +52,7 @@ let produtos = [{
 {
     categoria: "Produtos Alimentícios não perecíveis",
     nomeProduto: "Feijão",
-    preco: "R$07,79", 
+    preco: "07,79", 
     img: 'assets/img/produtos/feijao.jpg'
 },
 {
