@@ -6,6 +6,7 @@
 body{
      font-family: "Open Sans", sans-serif;
      background-color: #f8f8f8;
+     overflow-x: hidden;
 }
 /* header */
 header{
@@ -128,6 +129,15 @@ footer section {
     font-size: 0.875rem;
     color: #777;
 }
+
+/* cards resultado */
+
+.card-img-top {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 
 /* media query */
 @media (max-width: 768px) {
