@@ -1,6 +1,6 @@
 # 💻 Projeto Minimercado Web 
 
-Segunda parte do projeto da disciplina de Fundamentos de Sistemas Web, focado na criação de um sistema web. O objetivo principal foi aplicar os conhecimentos em desenvolvimento frontend para construir um sistema web de um minimercado ficticio chamado Mercado Boa-Compra.
+Segunda parte do projeto da disciplina de Fundamentos de Sistemas Web, focado na criação de um sistema web. O objetivo principal foi aplicar os conhecimentos em CSS, Bootsrtap e JavaScript para melhorar a parte visual e lógica do minimercado ficticio chamado Mercado Boa-Compra.
 
 ## ✨ Funcionalidades Principais
 
@@ -40,7 +40,6 @@ Arquivos JavaScript que são responsáveis pela implementação da lógica da ap
 * `produtos.js`: Define e armazena um array de objetos que representam os produtos do minimercado. Cada objeto de produto inclui propriedades como `categoria`, `nomeProduto`, `preco` e `img`.
 
 ##  Deploy do Projeto:
+https://brendhaed.github.io/sistema-web-minimercado/ 
 
-
-
-Desenvolvido com ❤️ por [brendhaed]
+Desenvolvido com por brendhaed💻❤️
