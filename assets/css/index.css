@@ -140,11 +140,27 @@ footer section {
 
 
 /* media query */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     header{
         height: 300px;
 }
- #carrinho i {
+.navbar-collapse {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 50%; 
+    height: 100vh;
+    background-color: #171e27;
+    padding: 20px;
+    z-index: 9999;
+    transform: translateX(-100%); 
+    box-shadow: 4px 0 10px rgba(0, 0, 0, 0.5); 
+    transition: all 0.1s ease;
+  }
+  .navbar-collapse.show {
+    transform: translateX(0); 
+  }
+  #carrinho i {
     font-size: 20px;
 }
 }
